@@ -11,7 +11,6 @@ from flask import render_template
 Base = declarative_base()
 
 # Connect to Database and create database session
-# engine = create_engine('sqlite:///item_catalog.db')
 engine = create_engine('postgresql+psycopg2://catalog:4tunat3lySaf31sh@localhost/catalog')
 Base.metadata.bind = engine
 
@@ -20,7 +19,7 @@ session = DBSession()
 
 
 class User(Base):
-    """User Table - sqlAlchemy linked with SQLite3 back end"""
+    """User Table - sqlAlchemy linked with PostGreSQL back end"""
     __tablename__ = 'user'
 
     user_id = Column(Integer, primary_key=True)
@@ -69,7 +68,7 @@ class User(Base):
 
 
 class Category(Base):
-    """Category table - sqlAlchemy linked with SQLite3 back end"""
+    """Category table - sqlAlchemy linked with PostGreSQL back end"""
     __tablename__ = 'category'
 
     category_id = Column(Integer, primary_key=True)
@@ -88,7 +87,7 @@ class Category(Base):
 
     @classmethod
     def add_or_update(cls, name, user_id, category_id=None):
-        """Add or update the caegory record
+        """Add or update the category record
 
         Args:
             name: category name, per the UI entry
@@ -214,7 +213,7 @@ class Category(Base):
 
 
 class Item(Base):
-    """Item table - sqlAlchemy linked with SQLite3 back end"""
+    """Item table - sqlAlchemy linked with PostGreSQL back end"""
     __tablename__ = 'item'
 
     item_id = Column(Integer, primary_key=True)
