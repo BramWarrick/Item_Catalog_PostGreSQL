@@ -1,0 +1,39 @@
+  <!-- Begin Item details -->
+  <section>
+
+    <div class="row">
+
+      <div class="col-md-9 col-md-offset-2 text-left">
+        <h4>
+          <small>
+            {{ item._item_name }}
+          </small>
+        </h4>
+      </div>
+
+    </div>
+
+    <!-- Blog content with <br> replaced in for line breaks-->
+    <div class="row text-center">
+    
+      <p class="col-md-8 col-md-offset-2 text-left">
+        {{ item._item_description | safe | replace("\n", "<br>") }}
+      </p>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-2 col-sm-offset-3 text-left">
+        <a class="login-link" href="/item/{{ item._item_id | safe }}/edit">Edit</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="row">
+    <div class="col-md-12">
+      <hr class="hr">
+    </div>
+  </div>

@@ -1,0 +1,18 @@
+{% extends "/base.html" %}
+
+{% block content %}
+
+	{% for category in categories %}
+
+		{{ category.render() | safe }}
+
+
+		{% for item in items %}
+
+			{{ item.render() | safe }}
+
+		{% endfor %}
+
+	{% endfor %}
+
+{% endblock %}
